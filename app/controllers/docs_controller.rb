@@ -1,4 +1,5 @@
 class DocsController < ApplicationController
+  before_action :find_doc, only: [:show, :edit, :update, :destroy ]
 
   def index
   end
@@ -15,11 +16,8 @@ class DocsController < ApplicationController
       if @doc.save
         redirect_to @doc
       else
-        render 'new'
+        render new
       end
-
-
-
   end
 
   def edit
@@ -34,6 +32,8 @@ class DocsController < ApplicationController
   private
 
   def find_doc
+    @doc = Doc.find(params[:id])
+
   end
 
   def doc_params
