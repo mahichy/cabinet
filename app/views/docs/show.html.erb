@@ -1,4 +1,8 @@
 <h1>This is show Doc</h1>
 <h1>title:<%= @doc.title %></h1>
 <p>content:<%= @doc.content %></p>
-<%= link_to "Back", new_doc_path %>
+
+<%= link_to "All Doc", docs_path %> <br>
+<%= link_to "New Doc", new_doc_path %>
+<%= link_to "Edit Doc", edit_doc_path(@doc) %>
+<%= link_to "Delete", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?"} %>
