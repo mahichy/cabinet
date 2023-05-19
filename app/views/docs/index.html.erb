@@ -5,4 +5,7 @@
   <p><%= time_ago_in_words(doc.created_at)%></p>
   <p>Content: <%= doc.content%></p>
 
+
 <% end %>
+
+<%= link_to "New doc", new_doc_path%>
